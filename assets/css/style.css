@@ -1,4 +1,9 @@
 header {
-    background-image: url("newspaper.jpg")
+    background-image: url("newspaper.jpg");
+    text-align: center;
+}
+
+footer {
+    text-align: center;
 }
 
