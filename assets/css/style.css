@@ -1,9 +1,69 @@
+
+/*Header styling*/
 header {
-    background-image: url("newspaper.jpg");
+    background-color: lightblue;
     text-align: center;
+    font-size: 25px;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    width: auto;
+    cursor: pointer;
+
+}
+#title{
+    font-size: 45px;
+}
+span{
+    color: gray;
 }
 
+/*Input session Styling*/
+
+#input{
+    border-radius: 5px;
+    border-color: red;
+}
+
+/*Trending session*/
+.trending{
+    color: red;
+    font-weight: bold;
+}
+
+/*Search Btn*/
+.searchbtn{
+    color: beige;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color:black;
+    cursor: pointer;
+    font-size: 15px;
+    align-items: center;
+   
+}
+button{
+    align-items: ;
+}
+
+/*Footer Session*/
 footer {
     text-align: center;
+   background-color: lightblue;
+    font-size: 15px;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    width: auto;
+    cursor: pointer;
 }
 
+#github:hover{
+    border-radius:10px;
+    background-color: white;
+    padding: 5px;
+    width: 5px;
+
+}
+
+/*Media Query*/
