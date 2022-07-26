@@ -1,12 +1,38 @@
-<<<<<<< HEAD
+// Currents API
+function fetchData() {
 var url = 'https://api.currentsapi.services/v1/latest-news?' +
 'language=us&' +
 'apiKey=FMFdCCVwVZ-6TYYMhaG4j_62G-wT-ftp_Dx00FgCgtekS6Wz';
 var req = new Request(url);
 fetch(req)
-.then(function(response) {
-    console.log(response.json());
+.then(response => {
+    if (!response.ok){
+        throw Error("ERROR");
+    }
+    return response.json();
 })
+.then(data => {
+    console.log(data.data);
+    const html = data.data
+        .map(user => {
+            return `
+            <div class="user">
+                <p><img src="${image}"/></p>
+                <p>Title: ${title}</p>
+                <p>Description: ${description}</p>
+
+            </div>
+            `;
+        })
+        .join("");
+        console.log(html);
+        document.querySelector("#app").insertAdjacentHTML("afterbegin", html);        
+})
+.catch (error => {
+    console.log(error);
+});
+}
+fetchData();
 
 // News API
 var requestOptions = {
