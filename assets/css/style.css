@@ -18,6 +18,11 @@ span{
     color: gray;
 }
 
+.title-description{
+    border-bottom: 3px solid yellow;
+    margin-bottom: 15px;
+}
+
 /*Input session Styling*/
 
 #news{
@@ -57,7 +62,17 @@ span{
     height: 200px;
     background: beige;
     margin: 20px auto;
-    border-radius: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid black;
+    box-shadow: 5px 5px;
+    margin: 20px;
+
+}
+
+.box:hover{
+    opacity: .5;
+    box-shadow: 5px 5px red;
 }
 /*Footer Session*/
 footer {
@@ -80,3 +95,13 @@ footer {
 }
 
 /*Media Query*/
+@media  screen and (max-width:1200px) {
+    .box{
+    width: 100%;
+    height: 200px;
+    background: beige;
+    margin: 10px auto;
+    
+}
+    
+}
