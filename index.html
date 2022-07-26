@@ -9,12 +9,15 @@
     <script src="https://kit.fontawesome.com/5465b12942.js" crossorigin="anonymous"></script> <!--Font Awesome-->
     <title>Millenial NewsStand</title>
   </head>
-
+  
   <body>
   </body><!--Header Session-->
     <header>
+        <img class="object-scale-down h-20 w-25 "  src="./assets/images/millennial-red-grunge-button-stamp-PHR7GA.jpeg"><!--Using Tailwing CSS-->
         <h1 id="title" class="news-title">Millenial <span>NewsStand</span></h1> <a href="https://nick9850.github.io/NewsStand/"></a> <!--When NewsStand click it will take customer back to the home page-->
         <p class="title-description">Your place to stay updated!</p>
+        <p class="currentday">Current Day</p> <!-- Current Day-->
+   
      
     </header>
 
@@ -22,12 +25,12 @@
     <aside>
         <!--search area-->
         <section>
-            <form>
+            <form class="text-right">
             <h2 id="topic" class="search-topic"> <strong>Search Topic Here:</strong></h2>
             
                 <input id="news"   type="text" placeholder="Search Topic">
                
-                <button id="btn" class="searchbtn" >Search</button>
+                <button id="btn" class="searchbtn" ><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </section>
         <!--saved history area-->
@@ -36,31 +39,34 @@
     
     <!--main body area--> <!--Using tailwind css-->
     <section class="text-center md:text-center hover:text" >
-        <p class="trending" >Trending News:</p>
+        <p class="trending" >Trending News</p>
         <!--Currents API here to pull in headlines-->
         <script src="./assets/js/script.js"></script>
 
     </section>
 
 <!--boxes where the news will be, responsive containter-->
-<div class="box"></div>
+<div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum atque ducimus consequuntur necessitatibus impedit neque optio. Quam, non quos, veritatis corporis recusandae nulla maiores eaque voluptatum modi molestiae, distinctio obcaecati.</div>
 
-<div class="box"></div>
+<div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus repudiandae reprehenderit facere aspernatur asperiores, velit eaque dolores voluptatum a minus iusto amet totam sunt nostrum, alias sequi, odit neque!</div>
 
-<div class="box"></div>
+<div class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam id nostrum ducimus excepturi vero facilis commodi dolore sed exercitationem soluta. Hic consectetur fugit cum aliquid quos at, blanditiis necessitatibus dolorum?</div>
 
-<div class="box"></div>
+<div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse atque asperiores minima labore pariatur quo saepe, sequi, magni eveniet officiis illum minus at. Cum rem animi ipsum ratione, quia ipsa.</div>
 
     <article>
         <!--News API here to pull in searchables news topics-->
     </article>
 
     <!--Footer Session-->
-    <footer class="footer">
+    <footer class="footer" class="text-left"> <!--Using tailwing CSS-->
         <h2 class="footer-title">
-           <i class="fa-solid fa-copyright"></i> Team Seven Project 1 - July 2022
+           <i class="fa-solid fa-copyright" ></i> Team Seven Project 1 - July 2022
+           <br>
+           <p>Created by:</p>
         </h2>
         <p><!--Added target to create a diffent tab when clicking on the links-->
+            
             <a id="github" target="_blank"  href="https://github.com/nbacchus"><i class="fa-brands fa-github-square"></i>Nadia Bacchus</a>
             <br>
             <a id="github" target="_blank"   href="https://github.com/brendasosa0721"><i class="fa-brands fa-github-square"></i>Brenda Sosa</a>
@@ -70,6 +76,7 @@
     </footer>
 
 
-    <script src="./assets/js/script.js"></script
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
