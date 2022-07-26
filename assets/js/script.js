@@ -46,6 +46,15 @@ var params = {
     limit: '50'
 };
 
+
+// Moment JS- for the current day in the trending session
+var trending = document.querySelector(".currentday");
+var currentDay = moment().format("MMM Do YY");
+console.log(currentDay);
+trending.innerHTML = currentDay
+//console.log(currentDay)
+
+
 var esc = encodeURIComponent;
 var query = Object.keys(params)
     .map(function(k) {return esc(k) + '=' + esc(params[k]);})
@@ -55,3 +64,4 @@ fetch("https://api.thenewsapi.com/v1/news/all?" + query, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+
