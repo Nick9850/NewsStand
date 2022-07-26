@@ -20,15 +20,18 @@ span{
 
 /*Input session Styling*/
 
-#input{
-    border-radius: 5px;
-    border-color: red;
+#news{
+    border-radius: solid 5px;
+    border-color: solid black;
 }
 
 /*Trending session*/
 .trending{
     color: red;
     font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+
 }
 
 /*Search Btn*/
@@ -42,10 +45,20 @@ span{
     align-items: center;
    
 }
-button{
-    align-items: ;
+
+.searchbtn:hover{
+    background-color: beige;
+    color: blue;
 }
 
+/*News Session*/
+.box{
+    width: 80%;
+    height: 200px;
+    background: beige;
+    margin: 20px auto;
+    border-radius: 5px;
+}
 /*Footer Session*/
 footer {
     text-align: center;
