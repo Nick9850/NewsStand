@@ -24,7 +24,7 @@ Then I am presented with the current headlines and topics I am interested in. Wh
 
 https://nick9850.github.io/NewsStand/
 
-
+![Screen Shot 2022-07-27 at 6 15 45 PM](https://user-images.githubusercontent.com/106204413/181387885-3b200ad2-7a99-407b-bf8a-5e4cfacb2717.png)
 
 **# Contribution**
 
