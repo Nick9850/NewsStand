@@ -10,15 +10,28 @@
     <title>Millenial NewsStand</title>
   </head>
   
-  <body><!--Header Session-->
+  <body>
+    <!--Header Session-->
     <header>
-
         <img class="object-scale-down h-20 w-25 "  src="./assets/images/millennial-red-grunge-button-stamp-PHR7GA.jpeg"><!--Using Tailwing CSS-->
         <h1 id="title" class="news-title">Millenial <span>NewsStand</span></h1> <a href="https://nick9850.github.io/NewsStand/"></a> <!--When NewsStand click it will take customer back to the home page-->
         <p class="title-description">Your place to stay updated!</p>
         <p class="currentday">Current Day</p> <!-- Current Day-->
-
     </header>
+    
+    <!--main body area--> <!--Using tailwind css-->
+    <section class="text-center md:text-center hover:text" >
+        <p class="trending" >Trending News</p>
+        <!--Currents API here to pull in headlines-->
+        <!--boxes where the news will be, responsive containter-->
+        <div id="app"></div>
+
+        <div id="app"></div>
+
+        <div id="app"></div>
+
+        <div id="app"></div>
+    </section>
 
     <!--right side of page-->
     <aside>
@@ -35,21 +48,6 @@
 
         <!--saved history area-->
     </aside>
-    
-    <!--main body area--> <!--Using tailwind css-->
-    <section class="text-center md:text-center hover:text" >
-        <p class="trending" >Trending News</p>
-        <!--Currents API here to pull in headlines-->
-        <!--boxes where the news will be, responsive containter-->
-        <div id="app"></div>
-
-        <div id="app"></div>
-
-        <div id="app"></div>
-
-        <div id="app"></div>
-
-    </section>
 
     <article>
         <!--News API here to pull in searchables news topics-->
