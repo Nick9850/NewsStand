@@ -16,9 +16,8 @@ function fetchData() {
         .map((artical) => {
           return `
               <div class="trending">
-                  <p><img src="${artical.image}"/></p>
-                  <p>Title: ${artical.title}</p>
-                  <p>Description: ${artical.description}</p>
+                  <p>${artical.title}</p>
+                  <p>${artical.description}</p>
               </div>
               `;
         })

@@ -32,13 +32,18 @@ span{
 
 /*Trending session*/
 .trending{
-    color: red;
+    color: black;
     font-weight: bold;
     font-size: 25px;
     font-style: italic;
-   border-bottom: 3px solid green;
+   border-bottom: 3px solid red;
     margin-bottom: 15px;
    border-style: double;
+}
+
+#app {
+    font-size: 12px;
+
 }
 
 /*Search Btn*/
