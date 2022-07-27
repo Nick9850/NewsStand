@@ -76,13 +76,17 @@ span{
     border: 2px solid black;
     box-shadow: 5px 5px;
     margin: 20px;
-
 }
 
 .box:hover{
     opacity: .5;
     box-shadow: 5px 5px red;
 }
+
+p.app {
+    color: purple;
+}
+
 /*Footer Session*/
 footer {
     text-align: center;
