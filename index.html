@@ -1,101 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/5465b12942.js" crossorigin="anonymous"></script> <!--Font Awesome-->
-    <title>Millenial NewsStand</title>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/5465b12942.js" crossorigin="anonymous"></script> <!--Font Awesome-->
+        <title>Millenial NewsStand</title>
+    </head>
   
-  <body>
-  </body><!--Header Session-->
-    <header>
-        <img id="logo" class="object-scale-down h-20 w-25 "  src="./assets/images/millennial-red-grunge-button-stamp-PHR7GA.jpeg"><!--Using Tailwing CSS-->
-        <h1 id="title" class="news-title">Millenial <span>NewsStand</span></h1> <a href="https://nick9850.github.io/NewsStand/"></a> <!--When NewsStand click it will take customer back to the home page-->
-        <p class="title-description">Your place to stay updated!</p>
-        <p class="currentday">Current Day</p> <!-- Current Day-->
-    
-    </header>
-    <aside>
-       
-        <section>
-           <button id="prev" class="btn mr-5"><i class="fa-solid fa-backward-step"></i></button>
-            <button class="btn mr-5" id="next"  ><i class="fa-solid fa-forward"></i></button>
-            
-         
+    <body>
+        <!--Header Session-->
+        <header>
+            <img id="logo" class="object-scale-down h-20 w-25 "  src="./assets/images/millennial-red-grunge-button-stamp-PHR7GA.jpeg"><!--Using Tailwing CSS-->
+            <h1 id="title" class="news-title">Millenial <span>NewsStand</span></h1> <a href="https://nick9850.github.io/NewsStand/"></a> <!--When NewsStand click it will take customer back to the home page-->
+            <p class="title-description">Your place to stay updated!</p>
+            <p class="currentday">Current Day</p> <!-- Current Day-->
+        
+        </header>
+
+        <aside>
+            <section>
+            <button id="prev" class="btn m-5">Previous <i class="fa-solid fa-backward"></i></button>
+                <button class="btn m-5" id="next">Next <i class="fa-solid fa-forward"></i></button>
+            </section>
+        </aside>
+        
+        <!--main body area--> <!--Using tailwind css-->
+        <section class="text-center md:text-center hover:text">
+            <p class="trending">Trending News</p>
+            <!--Currents API here to pull in headlines-->
         </section>
-        <!--saved history area-->
-        <section></section>
-    </aside>
-    
-    <!--main body area--> <!--Using tailwind css-->
-    <section class="text-center md:text-center hover:text" >
-        <p class="trending" >Trending News</p>
-        <!--Currents API here to pull in headlines-->
 
-    </section>
+        <section id="news-box">
+            <!--boxes where the news will be, responsive containter-->
+        </section>
 
-    <section id="news-box">
+        <!--Weather API for local weather here-->
 
-<!--boxes where the news will be, responsive containter-->
+        <section id="current-weather" class="text-center">Todays Weather
 
-</section>
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators mb-0">
+                    <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo1" data-slide-to="1"></li>
+                    <li data-target="#demo1" data-slide-to="2"></li>
+                </ul>
 
-<section id="current-weather" class="text-center">Todays Weather
+                <!-- Carousel inner --> <!-- Current day Weather information-->
 
-    <div id="demo1" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ul class="carousel-indicators mb-0">
-                <li data-target="#demo1" data-slide-to="0" class="active"></li>
-                <li data-target="#demo1" data-slide-to="1"></li>
-                <li data-target="#demo1" data-slide-to="2"></li>
-              </ul>
-              <!-- Carousel inner --> <!-- Current  day Weather information-->
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="d-flex justify-content-between mb-4 pb-2">
-                    <div id="styling">
-                      <p  id="temp-display"   class="display-2"><strong>23C</strong></p> <!-- current weather-->
-                      <p  id="city-display"   class="text-muted mb-0">Miami, Florida</p> <!--City Name-->
-                      <br>
-                      <p id="humidity" class="text-muted mb-0"></p>
-                      <p id="wind-speed"></p>
-                      <p id="uvindex" class="text-muted mb-0"></p>
-                      
-                    </div>
-                    <div class="flex items-center justify-center"> <!--using tailwind css-->
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
-                        width="150px">
-                    </div>
-          </section>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <div class="d-flex justify-content-between mb-4 pb-2">
+                        <div id="styling">
+                        <p  id="temp-display"   class="display-2"><strong>23C</strong></p> <!-- current weather-->
+                        <p  id="city-display"   class="text-muted mb-0">Miami, Florida</p> <!--City Name-->
+                        <br>
+                        <p id="humidity" class="text-muted mb-0"></p>
+                        <p id="wind-speed"></p>
+                        <p id="uvindex" class="text-muted mb-0"></p>
+                        
+                        </div>
+                        <div class="flex items-center justify-center"> <!--using tailwind css-->
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                            width="150px">
+                </div>
+        </section>
 
-
-    <article>
-        <!--News API here to pull in searchables news topics-->
-    </article>
-
-    <!--Footer Session-->
-    <footer class="footer" class="text-left"> <!--Using tailwing CSS-->
-        <h2 class="footer-title">
-           <i class="fa-solid fa-copyright" ></i> Team Seven Project 1 - July 2022
-           <br>
-           <p>Created by:</p>
-        </h2>
-        <p><!--Added target to create a diffent tab when clicking on the links-->
-            
-            <a id="github" target="_blank"  href="https://github.com/nbacchus"><i class="fa-brands fa-github-square"></i>Nadia Bacchus</a>
+        <!--Footer Session-->
+        <footer class="footer" class="text-left"> <!--Using tailwing CSS-->
+            <h2 class="footer-title">
+            <i class="fa-solid fa-copyright" ></i> Team Seven Project 1 - July 2022
             <br>
-            <a id="github" target="_blank"   href="https://github.com/brendasosa0721"><i class="fa-brands fa-github-square"></i>Brenda Sosa</a>
-            <br>
-            <a id="github"  target="_blank"  href="https://github.com/Nick9850"><i class="fa-brands fa-github-square"></i>Nick Reitmeyer.</a>
-        </p>
-    </footer>
+            <p>Created by:</p>
+            </h2>
+            <p><!--Added target to create a diffent tab when clicking on the links-->
+                
+                <a id="github" target="_blank"  href="https://github.com/nbacchus"><i class="fa-brands fa-github-square"></i>Nadia Bacchus</a>
+                <br>
+                <a id="github" target="_blank"   href="https://github.com/brendasosa0721"><i class="fa-brands fa-github-square"></i>Brenda Sosa</a>
+                <br>
+                <a id="github"  target="_blank"  href="https://github.com/Nick9850"><i class="fa-brands fa-github-square"></i>Nick Reitmeyer.</a>
+            </p>
+        </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    
-  </body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+        
+    </body>
 </html>
