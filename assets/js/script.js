@@ -13,8 +13,8 @@ function showdata(direction){
       //  }
        return `
               <div class="box">
-                  <h1>${artical.title}</h1>
-                  <p>${artical.description}</p>
+                  <h1 class = " article-title">${artical.title}</h1>
+                  <p class = " article-description" >${artical.description}</p>
                   <img  class="img" src= "${artical.image}">
               </div>
               `;
