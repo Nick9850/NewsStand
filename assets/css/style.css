@@ -47,7 +47,7 @@ span{
 .trending{
     color: red;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     font-style: italic;
    border-bottom: 3px solid green;
     margin-bottom: 15px;
@@ -84,7 +84,6 @@ span{
     border: 2px solid black;
     box-shadow: 5px 5px;
     margin: 20px;
-    
 
 }
 

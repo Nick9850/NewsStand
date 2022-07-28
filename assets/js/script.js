@@ -123,10 +123,12 @@ fetchData();
 
 //Moment JS- for the current day in the trending session
 var trending = document.querySelector(".currentday");
-var currentDay = moment().format("MMM Do YY");
+var currentDay = moment().format("LLLL");
 console.log(currentDay);
 trending.textContent = currentDay
 console.log(currentDay)
+
+//Nav buttons for Currents API - scrolls through the articles
 
 var nextbtn = document.querySelector("#next");
 var prevbtn = document.querySelector("#prev");
@@ -138,3 +140,62 @@ showdata("next")
 prevbtn.addEventListener("click", function(){
   showdata("prev")
 })
+
+//Weather API
+function searchFromApi() {
+  var inputs = document.querySelector("#weather-input");
+  console.log(inputs);
+  var inputValue = inputs.value;
+  var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    inputValue +
+    "&appid=" +
+    apiKey;
+
+  //Fetch function
+  fetch(queryURL) // Fetch Data
+    .then(function (response) {
+      // Promise has been resolve sucessfully
+      return response.json(); // parse the response to be an object/promise
+    })
+
+    .then(function (data) {
+      // new promise has been resolved
+      console.log(data);
+      searchFromCoordinate(data.coord.lon, data.coord.lat); // data holds the responses from the API
+    });
+}
+
+// //Current Weather- Calling the current weather
+// function searchFromCoordinate(lon, lat) {
+//   var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
+//   var inputs = document.querySelector("#weather-input");
+//   fetch(
+//     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+//       lat +
+//       "&lon=" +
+//       lon +
+//       "&appid=" +
+//       apiKey +
+//       "&units=imperial"
+//   )
+//     .then(function (response) {
+//       // Promise has been resolve sucessfully
+//       return response.json(); // parse the response to be an object/promise
+//     })
+
+//     .then(function (data) {
+//       // new promise has been resolved
+//       console.log(data);
+//       document.querySelector("#temp-display").textContent =
+//         data.current.temp + "°F";
+//       document.querySelector("#city-display").textContent = inputs.value;
+//       document.querySelector("#humidity").textContent =
+//         "Humidity " + data.current.humidity + "%";
+//       document.querySelector("#wind-speed").textContent =
+//         "Wind Speed " + data.current.wind_speed + " mph ";
+//       document.querySelector("#uvindex").textContent =
+//         "UVI " + data.current.uvi;
+//     });
+// }
