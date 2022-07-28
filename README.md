@@ -5,13 +5,13 @@
 
 We created a News channel where all the lastest news will be accesible for this generation. We are always looking for easy and quick information.
 
-The Millenial Newsstand is a hub for our generation to quickly and easily access the latest headlines and other searchable topics.
+The Millenial Newsstand is a hub for our generation to quickly and easily access the latest headlines and the local weather.
 
-As Millennials, we want to see the daily news and our favorite topics at a glance so that I can stay up-to-date.
+As Millennials, we want to see the daily news and local weather at a glance so that I can stay up-to-date.
 
 Given a news dashboard
 When I search for a specific topic
-Then I am presented with the current headlines and topics I am interested in. When I want to look at the information at a different time, then I can quick access the topics in my search history.
+Then I am presented with the current headlines and the current local weather. When I want to look at the information at a different time, then I can quick access the topics in my search history.
 
 **# Programs used**
 
@@ -19,6 +19,7 @@ Then I am presented with the current headlines and topics I am interested in. Wh
 2. CSS.
 3. Tailwind CSS.
 4. JavaScript.
+5. Moment JS
 
 **# Website & Screenshot**
 
