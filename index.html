@@ -54,12 +54,10 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                     <div class="d-flex justify-content-between mb-4 pb-2">
-                        <div id="styling">
-                        <p  id="temp-display"   class="display-2"><strong>23C</strong></p> <!-- current weather-->
-                        <p  id="city-display"   class="text-muted mb-0">Miami, Florida</p> <!--City Name-->
-                        <br>
-                        <p id="humidity" class="text-muted mb-0"></p>
-                        <p id="wind-speed"></p>
+                        <div id="citysearch">
+                        <h4 class="search-title">Search for a City:</h4>
+                        <input id="weather-input" type="text" class="input" placeholder="Enter a City">
+                        <button id="btn"  class="searchbtn">Search</button>
                         <p id="uvindex" class="text-muted mb-0"></p>
                         
                         </div>
@@ -68,7 +66,80 @@
                             width="150px">
                 </div>
         </section>
+    <!--Forecast Session-->
+    <div  id="forecast"   class="card-body text-center border border-info border-start-0 hidden">
+        <h1 class="current-weather">Today's Weather</h1>
+        <p class="today"></p>
+    </div>
+    <!--Weather Card-->
+      <section id="weather-card" class="vh-100 hidden" >
+  <div class="container py-5 h-100">
 
+    <div class="row d-flex justify-content-center align-items-center h-100" style="color: #282828;">
+      <div class="col-md-9 col-lg-7 col-xl-5">
+
+        <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+          <div class="card-body p-4">
+
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ul class="carousel-indicators mb-0">
+                <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                <li data-target="#demo1" data-slide-to="1"></li>
+                <li data-target="#demo1" data-slide-to="2"></li>
+              </ul>
+              <!-- Carousel inner --> <!-- Current  day Weather information-->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-between mb-4 pb-2">
+                    <div id="styling">
+                      <p  id="temp-display"   class="display-2"><strong>23C</strong></p> <!-- current weather-->
+                      <p  id="city-display"   class="text-muted mb-0">Miami, Florida</p> <!--City Name-->
+                      <br>
+                      <p id="humidity" class="text-muted mb-0"></p>
+                      <p id="wind-speed"></p>
+                      <p id="uvindex" class="text-muted mb-0"></p>
+                      
+                    </div>
+                    <div>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                        width="150px">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+  </div>
+
+</div>
+<body>
+   
+    <!--JS and Moment-->
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+        
         <!--Footer Session-->
         <footer class="footer" class="text-left"> <!--Using tailwing CSS-->
             <h2 class="footer-title">

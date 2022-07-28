@@ -1,40 +1,44 @@
-var newslist = []
-var startnum = 0 
-var endnum = 4
+var newslist = [];
+var startnum = 0;
+var endnum = 4;
+var searchbtn = document.querySelector(".searchbtn");
+var card = document.querySelector(".card");
+var dashboard = document.querySelector(".dashboard");
+var forecast = document.querySelector("#forecast");
+var citysearch = document.querySelector("#citysearch");
+var todayDay = document.querySelector(".today");
+var currentweather = document.querySelector(".current-weather");
+var weathercard = document.querySelector("#weather-card");
+var inputs = document.querySelector("#weather-input");
 
-
-function showdata(direction){
-  document.querySelector("#news-box") .innerHTML = ""
-   const html = newslist
-     .map((artical, i) => {
+function showdata(direction) {
+  document.querySelector("#news-box").innerHTML = "";
+  const html = newslist
+    .map((artical, i) => {
       //  if (i >= endnum && i <= startnum) {
       //    // Limiting the string of news
       //    return;
       //  }
-       return `
+      return `
               <div class="box">
                   <h1 class = " article-title">${artical.title}</h1>
                   <p class = " article-description" >${artical.description}</p>
                   <img  class="img" src= "${artical.image}">
               </div>
               `;
-     })
-     .slice(startnum, endnum)
-     //.filter((item) => item) // filtering out empty items
-     .join("");
-     if (direction === "next" && endnum + 4 < newslist.length){
-      startnum += 4
-      endnum += 4
-      
-      
-     }
-     else if(direction === "prev" && startnum -4 >= 0){
-       startnum -= 4;
-       endnum -= 4;
-       
-     }
+    })
+    .slice(startnum, endnum)
+    //.filter((item) => item) // filtering out empty items
+    .join("");
+  if (direction === "next" && endnum + 4 < newslist.length) {
+    startnum += 4;
+    endnum += 4;
+  } else if (direction === "prev" && startnum - 4 >= 0) {
+    startnum -= 4;
+    endnum -= 4;
+  }
 
-   document.querySelector("#news-box").insertAdjacentHTML("afterbegin", html);
+  document.querySelector("#news-box").insertAdjacentHTML("afterbegin", html);
 }
 
 // Currents API
@@ -51,8 +55,8 @@ function fetchData() {
     })
     .then((data) => {
       console.log(data);
-      newslist = data.news
-      showdata()
+      newslist = data.news;
+      showdata();
       // const html = data.news
       //   .map((artical, i) => {
       //     if( i >= 4){ // Limiting the string of news
@@ -75,7 +79,6 @@ function fetchData() {
     .catch((error) => {
       console.log(error);
     });
-  console.log("hello");
 }
 
 function postData() {
@@ -107,41 +110,37 @@ function postData() {
       console.log(error);
     });
 }
-// News API
-var requestOptions = {
-  method: "GET",
-};
-
-var params = {
-  api_token: "hCFrFJecxlYxm8RgxEGwDdaJlZFDNkgw5ZU6vf6j",
-  categories: "business,tech",
-  search: "apple",
-  limit: "50",
-};
-
 fetchData();
-
-//Moment JS- for the current day in the trending session
-var trending = document.querySelector(".currentday");
-var currentDay = moment().format("LLLL");
-console.log(currentDay);
-trending.textContent = currentDay
-console.log(currentDay)
-
 //Nav buttons for Currents API - scrolls through the articles
 
 var nextbtn = document.querySelector("#next");
 var prevbtn = document.querySelector("#prev");
 
-nextbtn.addEventListener("click", function(){
-showdata("next")
+nextbtn.addEventListener("click", function () {
+  showdata("next");
+});
+prevbtn.addEventListener("click", function () {
+  showdata("prev");
+});
 
-})
-prevbtn.addEventListener("click", function(){
-  showdata("prev")
-})
 
-//Weather API
+// Weather API
+
+searchbtn.addEventListener("click", function () {
+  card.classList.add("hidden"), // Hidden the card session
+    console.log("card");
+  forecast.classList.remove("hidden"); //  Showing the forecast session
+  citysearch.classList.add("hidden"); // Hidden the citysearch session
+  weathercard.classList.remove("hidden"); //Showing the weather cards session
+
+  //Current day using moment js
+  var currentDay = moment().format("MMM Do YY");
+  console.log("currentDay");
+  todayDay.innerHTML = currentDay;
+  searchFromApi();
+});
+
+// API Call
 function searchFromApi() {
   var inputs = document.querySelector("#weather-input");
   console.log(inputs);
@@ -153,7 +152,7 @@ function searchFromApi() {
     "&appid=" +
     apiKey;
 
-  //Fetch function
+  //  //Fetch function
   fetch(queryURL) // Fetch Data
     .then(function (response) {
       // Promise has been resolve sucessfully
@@ -167,35 +166,58 @@ function searchFromApi() {
     });
 }
 
-// //Current Weather- Calling the current weather
-// function searchFromCoordinate(lon, lat) {
-//   var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
-//   var inputs = document.querySelector("#weather-input");
-//   fetch(
-//     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
-//       lat +
-//       "&lon=" +
-//       lon +
-//       "&appid=" +
-//       apiKey +
-//       "&units=imperial"
-//   )
-//     .then(function (response) {
-//       // Promise has been resolve sucessfully
-//       return response.json(); // parse the response to be an object/promise
-//     })
+//Current Weather- Calling the current weather
+function searchFromCoordinate(lon, lat) {
+  var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
+  var inputs = document.querySelector("#weather-input");
+  fetch(
+    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+      lat +
+      "&lon=" +
+      lon +
+      "&appid=" +
+      apiKey +
+      "&units=imperial"
+  )
+    .then(function (response) {
+      // Promise has been resolve sucessfully
+      return response.json(); // parse the response to be an object/promise
+    })
 
-//     .then(function (data) {
-//       // new promise has been resolved
-//       console.log(data);
-//       document.querySelector("#temp-display").textContent =
-//         data.current.temp + "°F";
-//       document.querySelector("#city-display").textContent = inputs.value;
-//       document.querySelector("#humidity").textContent =
-//         "Humidity " + data.current.humidity + "%";
-//       document.querySelector("#wind-speed").textContent =
-//         "Wind Speed " + data.current.wind_speed + " mph ";
-//       document.querySelector("#uvindex").textContent =
-//         "UVI " + data.current.uvi;
-//     });
-// }
+    .then(function (data) {
+      // new promise has been resolved
+      console.log(data);
+      document.querySelector("#temp-display").textContent =
+        data.current.temp + "°F";
+      document.querySelector("#city-display").textContent = inputs.value;
+      document.querySelector("#humidity").textContent =
+        "Humidity " + data.current.humidity + "%";
+      document.querySelector("#wind-speed").textContent =
+        "Wind Speed " + data.current.wind_speed + " mph ";
+      document.querySelector("#uvindex").textContent =
+        "UVI " + data.current.uvi;
+
+      for (var i = 1; i < 6; i++) {
+        document.querySelector("#temp" + i).textContent =
+          data.daily[i].temp.day;
+        // Forecast with Moment JS
+        var forecast = moment().add(1, "days").calendar();
+        console.log("forecast");
+        forecastdaily.innerHTML = forecastdaily;
+      }
+    });
+}
+
+//Local Storage
+var storageInput = localStorage.getItem(inputs);
+console.log(storageInput);
+inputs = storageInput;
+
+citysearch.addEventListener("text", function () {
+  console.log("text");
+
+  var text = inputs.text.target.value;
+  console.log(text);
+  localStorage.setItem(text, inputs);
+});
+searchFromApi();
