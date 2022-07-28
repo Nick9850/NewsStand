@@ -1,3 +1,42 @@
+var newslist = []
+var startnum = 0 
+var endnum = 4
+
+
+function showdata(direction){
+  document.querySelector("#news-box") .innerHTML = ""
+   const html = newslist
+     .map((artical, i) => {
+      //  if (i >= endnum && i <= startnum) {
+      //    // Limiting the string of news
+      //    return;
+      //  }
+       return `
+              <div class="box">
+                  <h1>${artical.title}</h1>
+                  <p>${artical.description}</p>
+                  <img  class="img" src= "${artical.image}">
+              </div>
+              `;
+     })
+     .slice(startnum, endnum)
+     //.filter((item) => item) // filtering out empty items
+     .join("");
+     if (direction === "next" && endnum + 4 < newslist.length){
+      startnum += 4
+      endnum += 4
+      
+      
+     }
+     else if(direction === "prev" && startnum -4 >= 0){
+       startnum -= 4;
+       endnum -= 4;
+       
+     }
+
+   document.querySelector("#news-box").insertAdjacentHTML("afterbegin", html);
+}
+
 // Currents API
 function fetchData() {
   console.log("inside fetch data");
@@ -12,17 +51,26 @@ function fetchData() {
     })
     .then((data) => {
       console.log(data);
-      const html = data.news
-        .map((artical) => {
-          return `
-              <div class="trending">
-                  <p>${artical.title}</p>
-                  <p>${artical.description}</p>
-              </div>
-              `;
-        })
-        .join("");
-      document.querySelector("#app").insertAdjacentHTML("afterbegin", html);
+      newslist = data.news
+      showdata()
+      // const html = data.news
+      //   .map((artical, i) => {
+      //     if( i >= 4){ // Limiting the string of news
+      //       return;
+      //     }
+      //     return `
+      //         <div class="box">
+      //             <h1>${artical.title}</h1>
+      //             <p>${artical.description}</p>
+      //             <img  class="img" src= "${artical.image}">
+      //         </div>
+      //         `;
+      //   })
+      //  .filter(item => item) // filtering out empty items
+      //   .join("");
+      // document
+      //   .querySelector("#news-box")
+      //   .insertAdjacentHTML("afterbegin", html);
     })
     .catch((error) => {
       console.log(error);
@@ -72,20 +120,21 @@ var params = {
 };
 
 fetchData();
-//postData();
-// Moment JS- for the current day in the trending session
-// var trending = document.querySelector(".currentday");
-// var currentDay = moment().format("MMM Do YY");
-// console.log(currentDay);
-// trending.innerHTML = currentDay
-// console.log(currentDay)
 
-//var esc = encodeURIComponent;
-//var query = Object.keys(params)
-//    .map(function(k) {return esc(k) + '=' + esc(params[k]);})
-//    .join('&');
+//Moment JS- for the current day in the trending session
+var trending = document.querySelector(".currentday");
+var currentDay = moment().format("MMM Do YY");
+console.log(currentDay);
+trending.textContent = currentDay
+console.log(currentDay)
 
-//fetch("https://api.thenewsapi.com/v1/news/all?" + query, requestOptions)
-//  .then(response => response.text())
-//  .then(result => console.log(result))
-//  .catch(error => console.log('error', error));
+var nextbtn = document.querySelector("#next");
+var prevbtn = document.querySelector("#prev");
+
+nextbtn.addEventListener("click", function(){
+showdata("next")
+
+})
+prevbtn.addEventListener("click", function(){
+  showdata("prev")
+})
