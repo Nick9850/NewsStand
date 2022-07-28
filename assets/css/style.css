@@ -47,10 +47,9 @@ span{
 .trending{
     color: red;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 45px;
     font-style: italic;
    border-bottom: 3px solid green;
-    margin-bottom: 15px;
    border-style: double;
 }
 

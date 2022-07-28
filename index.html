@@ -20,20 +20,20 @@
         
         </header>
 
-        <aside>
-            <section>
-            <button id="prev" class="btn m-5">Previous <i class="fa-solid fa-backward"></i></button>
-                <button class="btn m-5" id="next">Next <i class="fa-solid fa-forward"></i></button>
-            </section>
-        </aside>
-        
         <!--main body area--> <!--Using tailwind css-->
-        <section class="text-center md:text-center hover:text">
+        <section class="text-center md:text-center hover:text my-5">
             <p class="trending">Trending News</p>
             <!--Currents API here to pull in headlines-->
         </section>
 
-        <section id="news-box">
+        <div class="text-center md:text-center hover:text">
+            <section>
+            <button id="prev" class="btn m-5">Previous <i class="fa-solid fa-backward"></i></button>
+                <button class="btn m-5" id="next">Next <i class="fa-solid fa-forward"></i></button>
+            </section>
+        </div>
+
+        <section id="news-box" class="text-center md:text-center hover:text">
             <!--boxes where the news will be, responsive containter-->
         </section>
 
