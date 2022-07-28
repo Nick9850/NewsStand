@@ -13,7 +13,7 @@ Given a news dashboard
 When I search for a specific topic
 Then I am presented with the current headlines and topics I am interested in. When I want to look at the information at a different time, then I can quick access the topics in my search history.
 
-**# Program used**
+**# Programs used**
 
 1. HTML.
 2. CSS.
